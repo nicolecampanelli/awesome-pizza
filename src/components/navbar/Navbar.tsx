@@ -30,7 +30,7 @@ const Navbar = (): ReactElement | null => {
 
         <NavigationMenu.List className='flex space-x-6'>
           <NavigationMenu.Item>
-            <Link href={latestOrderId ? `/customer/order-status/${latestOrderId}` : '/order'}>
+            <Link href={latestOrderId ? `/customer/order-status/${latestOrderId}` : '/customer/order-status/not-found'}>
               <span className='hover:text-gray-300'>My Order</span>
             </Link>
           </NavigationMenu.Item>
