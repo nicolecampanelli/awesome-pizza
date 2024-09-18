@@ -1,6 +1,5 @@
-// src/pages/order-not-found.tsx
+'use server'
 import { CustomButton } from '@/components/buttons/CustomButton';
-import Link from 'next/link';
 import React from 'react';
 
 const OrderNotFound = () => {
