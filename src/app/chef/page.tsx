@@ -4,6 +4,7 @@ import { getAllOrders, updateOrderStatus } from '@/services/orders/OrderService'
 import { ReactElement, useEffect, useState } from 'react'
 import { IOrder } from '@/interface/components/models/IOrder'
 import OrderTable from '@/components/tables/OrderTable'
+import PizzaLoader from '@/components/loader/PizzaLoader'
 
 const ChefOrdersPage = (): ReactElement => {
   const { orders: contextOrders, updateOrderStatus: updateOrderStatusInContext } = useOrders()
@@ -75,7 +76,7 @@ const ChefOrdersPage = (): ReactElement => {
       })
   }
 
-  if (loading) return <p>Loading...</p>
+  if (loading) return <PizzaLoader />
   if (error) return <p>{error}</p>
 
   return (

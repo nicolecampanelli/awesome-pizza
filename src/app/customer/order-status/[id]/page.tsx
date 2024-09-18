@@ -2,6 +2,7 @@
 import { useOrders } from '@/app/context/OrdersContext'
 import OrderStatusActions from '@/components/actions/OrderStatusActions'
 import UserOrderCard from '@/components/cards/UserOrderCard'
+import PizzaLoader from '@/components/loader/PizzaLoader'
 import { IOrder } from '@/interface/components/models/IOrder'
 import { getStatusColor } from '@/utils/Utils'
 import { useParams } from 'next/navigation'
@@ -28,7 +29,7 @@ const OrderStatusPage = (): ReactElement => {
   }, [findOrder])
 
   if (loading) {
-    return <p>Loading...</p>
+    return <PizzaLoader />
   }
 
   if (!currentOrder) {
