@@ -2,7 +2,7 @@
 import { useOrders } from '../context/OrdersContext'
 import { getAllOrders, updateOrderStatus } from '@/services/orders/OrderService'
 import { ReactElement, useEffect, useState } from 'react'
-import { IOrder } from '@/interface/components/models/IOrder'
+import { IOrder, SelectStatus } from '@/interface/components/models/IOrder'
 import OrderTable from '@/components/tables/OrderTable'
 import PizzaLoader from '@/components/loader/PizzaLoader'
 
@@ -46,7 +46,7 @@ const ChefOrdersPage = (): ReactElement => {
     performGetAllOrders()
   }, [])
 
-  const handleStatusChange = (orderId: string, value: 'Received' | 'In Progress' | 'Completed') => {
+  const handleStatusChange = (orderId: string, value: SelectStatus) => {
     if (value === 'In Progress') {
       const inProgressOrder = orders.find(order => order.status === 'In Progress')
       if (inProgressOrder && inProgressOrder.id !== orderId) {
